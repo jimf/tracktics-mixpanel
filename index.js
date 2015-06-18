@@ -15,6 +15,7 @@ module.exports = function() {
          * @param {string} url URL to track
          */
         trackPage: function trackPage(url) {
+            if (!global.window.mixpanel) { return; }
             global.window.mixpanel.track('Page Viewed', { page: url });
         },
 
@@ -31,6 +32,8 @@ module.exports = function() {
             var mixpanel = global.window.mixpanel,
                 props = {},
                 hasProps = false;
+
+            if (!mixpanel) { return; }
 
             Object.keys(properties).forEach(function(key) {
                 if (key !== 'event') {
