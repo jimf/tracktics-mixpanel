@@ -12,6 +12,10 @@ describe('Tracktics KISSmetrics Plugin', function() {
         subject = trackticsMixpanel();
     });
 
+    it('should define name', function() {
+        expect(subject.name).toBe('Mixpanel');
+    });
+
     describe('#trackPage()', function() {
         var url;
 

@@ -8,6 +8,7 @@
 module.exports = function() {
 
     return {
+        name: 'Mixpanel',
 
         /**
          * Mixpanel page-tracking implementation.
